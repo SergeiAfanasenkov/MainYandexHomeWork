@@ -96,7 +96,7 @@ public class Product {
                         .xpath("//div[@data-apiary-widget-name='@MarketNode/FeedbackForm']"))));
         List<WebElement> secondList = chromeDriver.findElements(By.xpath("//h3[@data-zone-name='title']/a"));
         String newSecondList = secondList.stream().findFirst().get().getAttribute("title").toUpperCase();
-        Assertions.assertTrue((newList.equals(newSecondList)),
+        Assertions.assertTrue((newList.contains(newSecondList)),
                 "\nНаименование товара:\n" + newSecondList +"\nне соответствует сохраненному значению:\n" + newList);
     }
 }
